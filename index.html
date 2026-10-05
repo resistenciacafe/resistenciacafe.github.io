@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Resistencia Café · San Juan de Aragón, CDMX</title>
+<meta name="description" content="Cafetería en San Juan de Aragón VI Sección, a unos pasos del Bosque de Aragón. Café de especialidad, matcha, desayunos y eventos. Martes a domingo 9:30 a 6:30 pm. Pide por Uber Eats, DiDi Food o Rappi.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Resistencia Café · San Juan de Aragón">
+<meta property="og:description" content="Café de especialidad, pan y comida que te va a encantar. Martes a domingo 9:30 a 6:30 pm.">
+<meta property="og:image" content="https://resistenciacafe.github.io/fotos-landing/matcha.jpg">
+<meta property="og:locale" content="es_MX">
+<meta name="theme-color" content="#3b2418">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23f6efe4' stroke='%238a4a2b' stroke-width='3'/%3E%3Cpath d='M18 26h24v10a10 10 0 0 1-10 10h-4a10 10 0 0 1-10-10z' fill='none' stroke='%233b2418' stroke-width='3.5' stroke-linejoin='round'/%3E%3Cpath d='M42 29a5 5 0 0 1 0 9' fill='none' stroke='%233b2418' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Resistencia Café","address":{"@type":"PostalAddress","streetAddress":"Avenida 414 #328, Col. San Juan de Aragón VI Sección","addressLocality":"Gustavo A. Madero","addressRegion":"CDMX","postalCode":"07918","addressCountry":"MX"},"openingHours":"Tu-Su 09:30-18:30","priceRange":"$100-200","sameAs":["https://www.instagram.com/cafeteria.resistencia/"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600&family=Caveat:wght@500;700&display=swap">
+<style>
+/* Layout: sello circular de la marca como héroe, polaroids con cinta para el menú, ticket de barra para horario */
+:root {
+  --paper: #f6efe4;
+  --card: #fffaf2;
+  --ink: #3b2418;
+  --muted: #7a5e4d;
+  --roast: #8a4a2b;
+  --leaf: #7f8f6a;
+  --tape: rgba(214, 190, 150, .75);
+  --line: #e4d6c2;
+  --display: "Young Serif", Georgia, serif;
+  --body: "Figtree", system-ui, -apple-system, sans-serif;
+  --hand: "Caveat", "Bradley Hand", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1f1610; --card: #2a1e16; --ink: #f1e4d3; --muted: #c4a991;
+    --roast: #e0956a; --leaf: #a7b78f; --tape: rgba(150, 120, 85, .6); --line: #3d2d22;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1f1610; --card: #2a1e16; --ink: #f1e4d3; --muted: #c4a991;
+  --roast: #e0956a; --leaf: #a7b78f; --tape: rgba(150, 120, 85, .6); --line: #3d2d22;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 1rem; line-height: 1.6; padding-inline: 16px; }
+.wrap { max-width: 980px; margin: 0 auto; padding-block: 2.5rem 3rem; display: grid; gap: 4.5rem; }
+h1, h2 { font-family: var(--display); font-weight: 400; line-height: 1.1; text-wrap: balance; margin: 0; }
+h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); }
+p { margin: 0; }
+a { color: inherit; }
+a:focus-visible, .btn:focus-visible { outline: 3px solid var(--roast); outline-offset: 3px; }
+.eyebrow { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.hand { font-family: var(--hand); font-size: 1.6rem; color: var(--roast); line-height: 1.1; }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2.5rem; align-items: center; }
+.hero h1 { font-size: clamp(2.4rem, 7vw, 4.4rem); }
+.hero-text { display: grid; gap: 1.1rem; min-width: 0; }
+.hero-text .lede { font-size: 1.15rem; color: var(--muted); max-width: 34ch; }
+.stamp { width: min(260px, 60vw); aspect-ratio: 1; max-width: 100%; }
+.stamp svg { width: 100%; height: 100%; display: block; }
+.stamp svg { animation: spin 60s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .stamp svg { animation: none; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.btn { display: inline-flex; align-items: center; gap: .5rem; padding: .8rem 1.3rem; border-radius: 999px; font-weight: 600; text-decoration: none; border: 2px solid var(--ink); transition: transform .15s ease; }
+.btn:hover { transform: translateY(-2px); }
+.btn.primary { background: var(--ink); color: var(--paper); }
+.delivery { display: grid; gap: .5rem; margin-top: .4rem; }
+.apps { display: flex; flex-wrap: wrap; gap: .6rem; }
+.app { display: inline-flex; align-items: center; gap: .55rem; padding: .6rem 1.1rem; border-radius: 10px; background: var(--card); border: 1px solid var(--line); font-weight: 600; text-decoration: none; transition: transform .15s ease, border-color .15s ease; }
+.app::before { content: ""; width: .7rem; height: .7rem; border-radius: 50%; background: var(--dot); }
+.app:hover { transform: translateY(-2px); border-color: var(--dot); }
+.app:focus-visible { outline: 3px solid var(--roast); outline-offset: 3px; }
+.app.uber { --dot: #06c167; }
+.app.didi { --dot: #ff7d41; }
+.app.rappi { --dot: #ff441f; }
+
+/* Ticket de horario */
+.ticket { background: var(--card); border: 1px dashed var(--muted); border-radius: 6px; padding: 1.5rem; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem; }
+.ticket dl { margin: 0; display: grid; gap: .4rem; font-variant-numeric: tabular-nums; }
+.ticket .row { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px dotted var(--line); padding-bottom: .4rem; }
+.ticket dt { color: var(--muted); }
+.ticket dd { margin: 0; font-weight: 600; }
+.ticket .closed dd { color: var(--roast); }
+.ticket address { font-style: normal; display: grid; gap: .5rem; }
+
+/* Polaroids */
+.section-head { display: grid; gap: .5rem; margin-bottom: 1.8rem; }
+.polaroids { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.8rem; }
+.pola { background: var(--card); padding: .8rem .8rem 1.1rem; box-shadow: 0 6px 18px rgba(59, 36, 24, .12); position: relative; display: grid; gap: .6rem; }
+.pola:nth-child(odd) { transform: rotate(-1.6deg); }
+.pola:nth-child(even) { transform: rotate(1.4deg); }
+.pola::before { content: ""; position: absolute; top: -12px; left: 50%; width: 80px; height: 24px; background: var(--tape); transform: translateX(-50%) rotate(-3deg); }
+.pola img.shot { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; padding: 0; display: block; }
+.pola .shot { aspect-ratio: 4 / 3; max-width: 100%; display: grid; place-items: center; font-family: var(--hand); font-size: 1.1rem; color: var(--paper); text-align: center; padding: 1rem; }
+.shot.a { background: linear-gradient(160deg, #c08457, #6f3b22); }
+.shot.b { background: linear-gradient(160deg, #a4b07f, #5b6b45); }
+.shot.c { background: linear-gradient(160deg, #d4a3a6, #8b4f57); }
+.shot.d { background: linear-gradient(160deg, #e2c08d, #9a6a35); }
+.pola .name { font-family: var(--hand); font-size: 1.55rem; line-height: 1; }
+.pola .price { font-variant-numeric: tabular-nums; color: var(--muted); font-size: .9rem; }
+.note { margin-top: 1.4rem; color: var(--muted); font-size: .92rem; }
+
+/* Reseñas */
+.quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+.quote { display: grid; gap: .6rem; align-content: start; border-top: 2px solid var(--ink); padding-top: 1rem; }
+.quote p { font-family: var(--display); font-size: 1.15rem; line-height: 1.4; }
+.quote cite { font-style: normal; color: var(--muted); font-size: .88rem; }
+.score { display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 1.8rem; }
+.score div { display: grid; }
+.score strong { font-family: var(--display); font-size: 2.4rem; font-weight: 400; line-height: 1; }
+.score span { color: var(--muted); font-size: .88rem; }
+
+/* Eventos */
+.events { display: grid; grid-template-columns: 1fr; gap: 1.8rem; }
+.events ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.4rem; }
+.events li { display: grid; gap: .2rem; padding: 1rem 1.2rem; background: var(--card); border-left: 4px solid var(--leaf); }
+.events li strong { font-weight: 600; }
+.events li span { color: var(--muted); font-size: .92rem; }
+.events li { align-content: start; }
+.events li.photo img { width: 100%; aspect-ratio: 4 / 3; max-width: 100%; object-fit: cover; margin-bottom: .6rem; display: block; }
+
+footer { border-top: 1px solid var(--line); padding-top: 1.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; color: var(--muted); font-size: .88rem; }
+
+@media (max-width: 680px) {
+  .hero { grid-template-columns: 1fr; }
+  .stamp { justify-self: center; order: -1; width: min(200px, 55vw); }
+  .ticket, .events { grid-template-columns: 1fr; }
+}
+</style>
+<style>body{margin:0}</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-text">
+      <span class="eyebrow">Av. 414 #328 · San Juan de Aragón VI Sección · GAM</span>
+      <h1>Compartir y resistir.</h1>
+      <p class="lede">Café de especialidad, pan y comida que te va a encantar, a unos pasos del Bosque de Aragón.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://maps.app.goo.gl/AfHqYPiCLqRhHkTw9" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+        <a class="btn" href="https://www.instagram.com/cafeteria.resistencia/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+      <div class="delivery" aria-label="Pedir a domicilio">
+        <span class="eyebrow">Pide a domicilio</span>
+        <div class="apps">
+          <a class="app uber" href="https://www.ubereats.com/mx/store/cafeteria-resistencia-mexico-city/O9WDqgq2XNqs_uh5YRMgAw" target="_blank" rel="noopener noreferrer">Uber Eats</a>
+          <a class="app didi" href="https://oia.didiglobal.com/ds/q9TJD0?dp_sub1=5764608578904919669&amp;dp_sub2=googlemap&amp;dp_sub3=es-MX&amp;dp_sub4=10&amp;dp_sub5=52090100&amp;dp_sub6=19.467837&amp;dp_sub7=-99.065987" target="_blank" rel="noopener noreferrer">DiDi Food</a>
+          <a class="app rappi" href="https://www.rappi.com.mx/restaurantes/1930370937-resistencia-cafe" target="_blank" rel="noopener noreferrer">Rappi</a>
+        </div>
+      </div>
+    </div>
+    <div class="stamp" aria-hidden="true">
+      <svg viewBox="0 0 200 200">
+        <defs><path id="arc" d="M 30 100 A 70 70 0 0 1 170 100"/></defs>
+        <circle cx="100" cy="100" r="96" fill="var(--card)" stroke="var(--line)" stroke-width="2"/>
+        <circle cx="100" cy="100" r="86" fill="none" stroke="var(--roast)" stroke-width="1" stroke-dasharray="2 5"/>
+        <text font-family="Young Serif, Georgia, serif" font-size="25" fill="var(--roast)" letter-spacing="3"><textPath href="#arc" startOffset="50%" text-anchor="middle">Resistencia</textPath></text>
+        <g transform="translate(100 118)" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M-22 -10 h40 v18 a16 16 0 0 1 -16 16 h-8 a16 16 0 0 1 -16 -16 z" fill="var(--paper)"/>
+          <path d="M18 -4 a9 9 0 0 1 0 14"/>
+          <g transform="translate(-2 -30) rotate(-35)" stroke="var(--roast)" stroke-width="2.2">
+            <path d="M-16 4 Q0 -18 16 4 Q8 0 0 2 Q-8 0 -16 4 z" fill="var(--paper)"/>
+            <path d="M-8 -6 L-5 2 M0 -9 L0 2 M8 -6 L5 2"/>
+          </g>
+        </g>
+        <text x="100" y="168" text-anchor="middle" font-family="Figtree, sans-serif" font-size="10" letter-spacing="4" fill="var(--muted)">CAFÉ</text>
+      </svg>
+    </div>
+  </header>
+
+  <section class="ticket" aria-labelledby="h-horario">
+    <div>
+      <h2 id="h-horario" class="hand" style="margin-bottom:.8rem">Horario</h2>
+      <dl>
+        <div class="row"><dt>Martes a domingo</dt><dd>9:30 – 18:30</dd></div>
+        <div class="row closed"><dt>Lunes</dt><dd>Cerrado</dd></div>
+      </dl>
+    </div>
+    <address>
+      <span class="hand">Dónde estamos</span>
+      <span>Avenida 414 #328<br>Col. San Juan de Aragón VI Sección<br>Alcaldía Gustavo A. Madero<br>C.P. 07918, Ciudad de México</span>
+      <span style="color:var(--muted)">A unos pasos del Bosque de Aragón.</span>
+      <span style="color:var(--muted)">Consumo en el lugar, para llevar y a domicilio.</span>
+    </address>
+  </section>
+
+  <section aria-labelledby="h-menu">
+    <div class="section-head">
+      <span class="eyebrow">Lo más pedido</span>
+      <h2 id="h-menu">De la barra y de la cocina</h2>
+    </div>
+    <div class="polaroids">
+      <article class="pola"><img class="shot" src="fotos-landing/latte.jpg" alt="Latte de frutos rojos en vaso de vidrio con popote verde"><span class="name">Latte de frutos rojos</span><span class="price">De temporada, frío o caliente</span></article>
+      <article class="pola"><img class="shot" src="fotos-landing/hotcakes.jpg" alt="Hot cakes con miel"><span class="name">Desayuno todo incluido</span><span class="price">Desde $130</span></article>
+      <article class="pola"><img class="shot" src="fotos-landing/chilaquiles.jpg" alt="Chilaquiles con crema y queso"><span class="name">Chilaquiles en salsa de morita</span><span class="price">Menú del mes</span></article>
+      <article class="pola"><img class="shot" src="fotos-landing/matcha.jpg" alt="Coco Matcha frío en vaso con el logo de Resistencia"><span class="name">Coco Matcha</span><span class="price">$90</span></article>
+    </div>
+    <p class="note">Nuestro café es de <strong>El Fruto</strong>, tostadores mexicanos. También hay sándwich de pollo crunchy, moka, espresso coco ($75), té chai ($75) y pan. Menú completo en barra y en las apps de domicilio.</p>
+  </section>
+
+  <section aria-labelledby="h-resenas">
+    <div class="section-head">
+      <span class="eyebrow">Lo que dicen</span>
+      <h2 id="h-resenas">Ya hacía falta un lugar así en la zona</h2>
+    </div>
+    <div class="score">
+      <div><strong>4.5</strong><span>Google · 33 reseñas</span></div>
+      <div><strong>4.7</strong><span>Uber Eats</span></div>
+    </div>
+    <div class="quotes">
+      <figure class="quote" style="margin:0"><p>“Una nueva joya de la sexta sección de San Juan de Aragón.”</p><cite>Yuritzi, en Google</cite></figure>
+      <figure class="quote" style="margin:0"><p>“Probé un moka y se podía sentir el sabor del café. La atención es de 10.”</p><cite>Sarahi, en Google</cite></figure>
+      <figure class="quote" style="margin:0"><p>“Buen café, ambiente agradable, comida deliciosa.”</p><cite>Reseña en Google</cite></figure>
+    </div>
+  </section>
+
+  <section class="events" aria-labelledby="h-eventos">
+    <div class="section-head" style="margin:0">
+      <span class="eyebrow">Comunidad</span>
+      <h2 id="h-eventos">Resistir también es juntarnos</h2>
+      <p style="color:var(--muted);max-width:40ch">Hacemos eventos con proyectos del barrio. Los anunciamos primero en Instagram; aquí queda el resumen.</p>
+    </div>
+    <ul>
+      <li class="photo"><img src="fotos-landing/tote.jpg" alt="Clientas pintando tote bags en una mesa de la cafetería"><strong>Pinta tu tote bag</strong><span>Tote y pinturas incluidas, $100. Disponible todos los días.</span></li>
+      <li class="photo"><img src="fotos-landing/pilates.jpg" alt="Anuncio de la clase Pilates + Brunch con Studio by Ginebra"><strong>Pilates + Brunch</strong><span>Con Studio by Ginebra. Clase y desayuno incluidos, cupo limitado.</span></li>
+      <li class="photo"><img src="fotos-landing/bazar.jpg" alt="Collar de una marca local exhibido en el Bazar Resistencia"><strong>Bazar Resistencia</strong><span>Maquillaje, joyería y decoración de marcas locales, con tu cafecito.</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>Resistencia Café · Av. 414 #328, Col. San Juan de Aragón VI Sección, Gustavo A. Madero, C.P. 07918, CDMX</span>
+    <span>@cafeteria.resistencia</span>
+  </footer>
+</div>
+
+</body>
+</html>
