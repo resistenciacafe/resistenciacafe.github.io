@@ -2,7 +2,7 @@
 <html lang="es-MX">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; script-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Resistencia Café · San Juan de Aragón, CDMX</title>
@@ -63,11 +63,10 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--roast); outline-o
 .hero h1 { font-size: clamp(2.4rem, 7vw, 4.4rem); }
 .hero-text { display: grid; gap: 1.1rem; min-width: 0; }
 .hero-text .lede { font-size: 1.15rem; color: var(--muted); max-width: 34ch; }
-.stamp { width: min(260px, 60vw); aspect-ratio: 1; max-width: 100%; }
-.stamp svg { width: 100%; height: 100%; display: block; }
-.stamp svg { animation: spin 60s linear infinite; }
-@media (prefers-reduced-motion: reduce) { .stamp svg { animation: none; } }
-@keyframes spin { to { transform: rotate(360deg); } }
+.stamp { width: min(280px, 60vw); aspect-ratio: 496 / 864; max-width: 100%; border-radius: 22px; overflow: hidden; box-shadow: 0 10px 30px rgba(59, 36, 24, .18); background: var(--card); }
+.stamp video, .stamp img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.stamp .intro-still { display: none; }
+@media (prefers-reduced-motion: reduce) { .stamp .intro { display: none; } .stamp .intro-still { display: block; } }
 .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
 .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .8rem 1.3rem; border-radius: 999px; font-weight: 600; text-decoration: none; border: 2px solid var(--ink); transition: transform .15s ease; }
 .btn:hover { transform: translateY(-2px); }
@@ -131,7 +130,7 @@ footer { border-top: 1px solid var(--line); padding-top: 1.5rem; display: flex; 
 
 @media (max-width: 680px) {
   .hero { grid-template-columns: 1fr; }
-  .stamp { justify-self: center; order: -1; width: min(200px, 55vw); }
+  .stamp { justify-self: center; order: -1; width: min(230px, 62vw); }
   .ticket, .events { grid-template-columns: 1fr; }
 }
 </style>
@@ -158,22 +157,9 @@ footer { border-top: 1px solid var(--line); padding-top: 1.5rem; display: flex; 
         </div>
       </div>
     </div>
-    <div class="stamp" aria-hidden="true">
-      <svg viewBox="0 0 200 200">
-        <defs><path id="arc" d="M 30 100 A 70 70 0 0 1 170 100"/></defs>
-        <circle cx="100" cy="100" r="96" fill="var(--card)" stroke="var(--line)" stroke-width="2"/>
-        <circle cx="100" cy="100" r="86" fill="none" stroke="var(--roast)" stroke-width="1" stroke-dasharray="2 5"/>
-        <text font-family="Young Serif, Georgia, serif" font-size="25" fill="var(--roast)" letter-spacing="3"><textPath href="#arc" startOffset="50%" text-anchor="middle">Resistencia</textPath></text>
-        <g transform="translate(100 118)" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M-22 -10 h40 v18 a16 16 0 0 1 -16 16 h-8 a16 16 0 0 1 -16 -16 z" fill="var(--paper)"/>
-          <path d="M18 -4 a9 9 0 0 1 0 14"/>
-          <g transform="translate(-2 -30) rotate(-35)" stroke="var(--roast)" stroke-width="2.2">
-            <path d="M-16 4 Q0 -18 16 4 Q8 0 0 2 Q-8 0 -16 4 z" fill="var(--paper)"/>
-            <path d="M-8 -6 L-5 2 M0 -9 L0 2 M8 -6 L5 2"/>
-          </g>
-        </g>
-        <text x="100" y="168" text-anchor="middle" font-family="Figtree, sans-serif" font-size="10" letter-spacing="4" fill="var(--muted)">CAFÉ</text>
-      </svg>
+    <div class="stamp">
+      <video class="intro" src="fotos-landing/logo-video.mp4" poster="fotos-landing/logo-video-final.jpg" autoplay muted playsinline preload="auto" aria-label="Taza animada saludando junto a un Coco Matcha con el logo de Resistencia"></video>
+      <img class="intro-still" src="fotos-landing/logo-video-final.jpg" alt="Coco Matcha con el logo de Resistencia y una taza animada">
     </div>
   </header>
 
